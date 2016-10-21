@@ -12,6 +12,8 @@ import MBProgressHUD
 // Main ViewController
 class RepoResultsViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
 
@@ -19,7 +21,15 @@ class RepoResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Set up tableView
+        tableView.dataSource = self
+        tableView.delegate = self
+        // why is this?
+        //tableView.register(RepoResultsTableViewCell.self, forCellReuseIdentifier: "RepoResultsTableViewCell")
+        
+        tableView.estimatedRowHeight = 224
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         // Initialize the UISearchBar
         searchBar = UISearchBar()
         searchBar.delegate = self
@@ -43,12 +53,42 @@ class RepoResultsViewController: UIViewController {
             // Print the returned repositories to the output window
             for repo in newRepos {
                 print(repo)
-            }   
-
+            }
+            print("\n\n\n\n\n\n")
+            self.repos = newRepos
+            print(self.repos)
+            self.tableView.reloadData()
             MBProgressHUD.hide(for: self.view, animated: true)
             }, error: { (error) -> Void in
                 print(error)
         })
+    }
+}
+
+extension RepoResultsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var numberOfRows = 0
+        if let repos = repos {
+            numberOfRows = repos.count
+        } else {
+            numberOfRows = 0
+        }
+        return numberOfRows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoResultsTableViewCell", for: indexPath) as! RepoResultsTableViewCell
+        //let cell = RepoResultsTableViewCell()
+        //cell.textLabel?.text = repos[indexPath.row].repoDescription
+        let repo = repos[indexPath.row]
+        cell.titleLabel.text = repo.name
+        cell.starLabel.text = "Star: \(String(repo.stars!))"
+        cell.forkLabel.text = "Fork: \(String(repo.forks!))"
+        cell.usernameLabel.text = repo.ownerHandle
+        cell.profileImageView.setImageWith(URL(string: repo.ownerAvatarURL!)!)
+        cell.descriptionLabel.text = repo.repoDescription
+        
+        return cell
     }
 }
 

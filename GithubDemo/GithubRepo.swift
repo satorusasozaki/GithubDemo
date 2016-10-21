@@ -58,7 +58,6 @@ class GithubRepo: CustomStringConvertible {
 
         manager.get(reposUrl, parameters: params, success: { (operation: AFHTTPRequestOperation, responseObject: Any) in
             if let response = responseObject as? NSDictionary, let results = response["items"] as? NSArray {
-                print(response)
                 var repos: [GithubRepo] = []
                 for result in results as! [NSDictionary] {
                     repos.append(GithubRepo(jsonResult: result))
