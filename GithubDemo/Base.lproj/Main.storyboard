@@ -32,9 +32,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMz-Ox-ztJ" userLabel="Title View">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVZ-lH-ovZ">
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="csS-n7-zOO"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -90,11 +87,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.12941176469999999" green="0.59999999999999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="RVZ-lH-ovZ" firstAttribute="top" secondItem="HMz-Ox-ztJ" secondAttribute="top" constant="8" id="5DT-tc-FBD"/>
+                                                        <constraint firstItem="RVZ-lH-ovZ" firstAttribute="leading" secondItem="HMz-Ox-ztJ" secondAttribute="leading" constant="8" id="9AZ-pc-Uz6"/>
                                                         <constraint firstItem="vJm-bi-4Ag" firstAttribute="centerY" secondItem="HMz-Ox-ztJ" secondAttribute="centerY" id="KE9-X8-CrS"/>
-                                                        <constraint firstItem="RVZ-lH-ovZ" firstAttribute="leading" secondItem="HMz-Ox-ztJ" secondAttribute="leading" constant="8" id="VYG-Wc-QVS"/>
-                                                        <constraint firstAttribute="bottom" secondItem="RVZ-lH-ovZ" secondAttribute="bottom" constant="8" id="pQW-Jh-O8B"/>
-                                                        <constraint firstItem="RVZ-lH-ovZ" firstAttribute="centerY" secondItem="HMz-Ox-ztJ" secondAttribute="centerY" id="qQB-KX-Vsk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="RVZ-lH-ovZ" secondAttribute="bottom" constant="8" id="i7C-mb-4oY"/>
+                                                        <constraint firstItem="htJ-EJ-7Dd" firstAttribute="leading" secondItem="RVZ-lH-ovZ" secondAttribute="trailing" constant="30" id="nWr-uq-Fln"/>
+                                                        <constraint firstItem="RVZ-lH-ovZ" firstAttribute="top" secondItem="HMz-Ox-ztJ" secondAttribute="top" constant="8" id="pdc-J0-3Ya"/>
                                                         <constraint firstItem="vJm-bi-4Ag" firstAttribute="leading" secondItem="htJ-EJ-7Dd" secondAttribute="trailing" constant="8" id="tiq-oQ-Yen"/>
                                                         <constraint firstItem="htJ-EJ-7Dd" firstAttribute="centerY" secondItem="HMz-Ox-ztJ" secondAttribute="centerY" id="tm7-Qm-zxM"/>
                                                         <constraint firstItem="htJ-EJ-7Dd" firstAttribute="centerX" secondItem="HMz-Ox-ztJ" secondAttribute="centerX" constant="25" id="xjz-Vz-MM7"/>
@@ -182,7 +179,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="IQK-2Z-nIR" secondAttribute="trailing" id="ESc-wa-3Oy"/>
                             <constraint firstItem="IQK-2Z-nIR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="UfN-aH-zV9"/>
-                            <constraint firstItem="IQK-2Z-nIR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="i2V-T2-vxt"/>
+                            <constraint firstItem="IQK-2Z-nIR" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Xyj-Ex-4O0"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IQK-2Z-nIR" secondAttribute="bottom" id="lUy-iH-bTu"/>
                         </constraints>
                     </view>
