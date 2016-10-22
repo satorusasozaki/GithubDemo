@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JHG-hZ-9rP" id="frO-LP-hOT">
-                                            <frame key="frameInset" width="375" height="223.5"/>
+                                            <frame key="frameInset" width="375" height="223"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMz-Ox-ztJ" userLabel="Title View">
@@ -253,7 +253,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Star Filter" id="wVf-UW-o5H">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uNt-Gl-unR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uNt-Gl-unR" customClass="JavaTableViewCell" customModule="GithubDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="221" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uNt-Gl-unR" id="c6f-oy-ayL">
@@ -276,7 +276,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Khg-eO-F03">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Khg-eO-F03" customClass="JavaScriptTableViewCell" customModule="GithubDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="265" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Khg-eO-F03" id="POB-X5-E2n">
@@ -299,7 +299,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YAb-4V-0Ah">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YAb-4V-0Ah" customClass="ObjectiveCTableViewCell" customModule="GithubDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="309" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YAb-4V-0Ah" id="Srb-Kw-qDC">
@@ -322,7 +322,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5CA-EB-Y4T">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5CA-EB-Y4T" customClass="PythonTableViewCell" customModule="GithubDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="353" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5CA-EB-Y4T" id="NAx-4N-ePG">
@@ -345,7 +345,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Njs-Q4-rUH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Njs-Q4-rUH" customClass="RubyTableViewCell" customModule="GithubDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="397" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Njs-Q4-rUH" id="P3x-fj-3gF">
@@ -368,7 +368,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aGX-uL-9Gk">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aGX-uL-9Gk" customClass="SwiftTableViewCell" customModule="GithubDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="441" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aGX-uL-9Gk" id="YQF-wk-hR6">

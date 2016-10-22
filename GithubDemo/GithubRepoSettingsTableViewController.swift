@@ -26,13 +26,21 @@ class GithubRepoSettingsTableViewController: UITableViewController {
     @IBOutlet weak var rubyCell: UITableViewCell!
     @IBOutlet weak var swiftCell: UITableViewCell!
     
+    
+    
+    var filteredLanguages: [String]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sliderValue.text = String(Int(minimumStarsSlider.value))
         // Do any additional setup after loading the view.
+        filteredLanguages = [String]()
     }
     
     @IBAction func onSave(_ sender: AnyObject) {
+        let indexPath = IndexPath(row: 0, section: 1)
+        let cell = tableView.cellForRow(at: indexPath)
+        print("cell: \(cell)")
         doneHandler?(Int(minimumStarsSlider.value))
         self.dismiss(animated: true, completion: {})
     }
@@ -42,13 +50,28 @@ class GithubRepoSettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newCell = tableView.cellForRow(at: indexPath)
-        newCell?.accessoryType = .none
-        
-        if newCell?.accessoryType == .checkmark {
-            
-            
+        print("indexPath: \(indexPath)")
+        print("indexPath.row: \(indexPath.row)")
+        print("indexPath.section: \(indexPath.section)")
+        if newCell?.accessoryType == .none {
+            print(filteredLanguages)
+            newCell?.accessoryType = .checkmark
+            if newCell == javaCell {
+                filteredLanguages?.append("Java")
+            } else if newCell == javaScriptCell {
+                filteredLanguages?.append("JavaScript")
+            } else if newCell == objectiveCCell {
+                filteredLanguages?.append("Objective-C")
+            } else if newCell == pythonCell {
+                filteredLanguages?.append("Python")
+            } else if newCell == rubyCell {
+                filteredLanguages?.append("Ruby")
+            } else if newCell == swiftCell {
+                filteredLanguages?.append("Swift")
+            }
+
         } else {
-            
+            newCell?.accessoryType = .none
         }
         
         
