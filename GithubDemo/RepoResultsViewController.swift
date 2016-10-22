@@ -77,9 +77,13 @@ class RepoResultsViewController: UIViewController {
             self.languageFilter = langFilter
             print(minimum!)
             var newRepos = [GithubRepo]()
-            for repo in self.repos! {
+            for repo in self.repos!{
                 if repo.stars! > minimum! {
-                    newRepos.append(repo)
+                    if let language = repo.language {
+                        if self.languageFilter!.isChecked(language: language) {
+                            newRepos.append(repo)
+                        }
+                    } 
                 }
             }
             self.repos = newRepos

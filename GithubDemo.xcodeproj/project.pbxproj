@@ -18,12 +18,6 @@
 		6B2DDF0E1B02970A00D25281 /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DDF0D1B02970A00D25281 /* GithubRepo.swift */; };
 		6B9F8B0A1B02B8E5001483E7 /* GithubRepoSearchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9F8B091B02B8E4001483E7 /* GithubRepoSearchSettings.swift */; };
 		E3513C651DBB1D1B00534775 /* LanguageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3513C641DBB1D1B00534775 /* LanguageFilter.swift */; };
-		E3513C671DBB1ECA00534775 /* JavaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3513C661DBB1ECA00534775 /* JavaTableViewCell.swift */; };
-		E3513C691DBB1ED300534775 /* JavaScriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3513C681DBB1ED300534775 /* JavaScriptTableViewCell.swift */; };
-		E3513C6B1DBB1EDB00534775 /* ObjectiveCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3513C6A1DBB1EDB00534775 /* ObjectiveCTableViewCell.swift */; };
-		E3513C6D1DBB1EE100534775 /* PythonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3513C6C1DBB1EE100534775 /* PythonTableViewCell.swift */; };
-		E3513C6F1DBB1EE700534775 /* RubyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3513C6E1DBB1EE700534775 /* RubyTableViewCell.swift */; };
-		E3513C711DBB1EEF00534775 /* SwiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3513C701DBB1EEF00534775 /* SwiftTableViewCell.swift */; };
 		E383CE701DBAF3AB00139706 /* GithubRepoSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E383CE6F1DBAF3AB00139706 /* GithubRepoSettingsTableViewController.swift */; };
 		E3C6D0EF1DB976240002A98E /* RepoResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D0EE1DB976240002A98E /* RepoResultsTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -59,12 +53,6 @@
 		D5EDD6C651F700BECD821A77 /* Pods-GithubDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubDemo/Pods-GithubDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D787DCA4BDFFA74DC9217E77 /* Pods-GithubDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubDemo/Pods-GithubDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E3513C641DBB1D1B00534775 /* LanguageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageFilter.swift; sourceTree = "<group>"; };
-		E3513C661DBB1ECA00534775 /* JavaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JavaTableViewCell.swift; sourceTree = "<group>"; };
-		E3513C681DBB1ED300534775 /* JavaScriptTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JavaScriptTableViewCell.swift; sourceTree = "<group>"; };
-		E3513C6A1DBB1EDB00534775 /* ObjectiveCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveCTableViewCell.swift; sourceTree = "<group>"; };
-		E3513C6C1DBB1EE100534775 /* PythonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PythonTableViewCell.swift; sourceTree = "<group>"; };
-		E3513C6E1DBB1EE700534775 /* RubyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubyTableViewCell.swift; sourceTree = "<group>"; };
-		E3513C701DBB1EEF00534775 /* SwiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTableViewCell.swift; sourceTree = "<group>"; };
 		E383CE6F1DBAF3AB00139706 /* GithubRepoSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSettingsTableViewController.swift; sourceTree = "<group>"; };
 		E3C6D0EE1DB976240002A98E /* RepoResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoResultsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +128,6 @@
 				E3C6D0EE1DB976240002A98E /* RepoResultsTableViewCell.swift */,
 				6B2DDF0D1B02970A00D25281 /* GithubRepo.swift */,
 				6B9F8B091B02B8E4001483E7 /* GithubRepoSearchSettings.swift */,
-				E3513C721DBB1F0900534775 /* Cells */,
 				6B2DDEF11B02911A00D25281 /* Main.storyboard */,
 				6B2DDEF41B02911A00D25281 /* Images.xcassets */,
 				6B2DDEF61B02911A00D25281 /* LaunchScreen.xib */,
@@ -172,19 +159,6 @@
 				6B2DDF021B02911A00D25281 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E3513C721DBB1F0900534775 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E3513C661DBB1ECA00534775 /* JavaTableViewCell.swift */,
-				E3513C681DBB1ED300534775 /* JavaScriptTableViewCell.swift */,
-				E3513C6A1DBB1EDB00534775 /* ObjectiveCTableViewCell.swift */,
-				E3513C6C1DBB1EE100534775 /* PythonTableViewCell.swift */,
-				E3513C6E1DBB1EE700534775 /* RubyTableViewCell.swift */,
-				E3513C701DBB1EEF00534775 /* SwiftTableViewCell.swift */,
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,18 +364,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B2DDEF01B02911A00D25281 /* RepoResultsViewController.swift in Sources */,
-				E3513C6B1DBB1EDB00534775 /* ObjectiveCTableViewCell.swift in Sources */,
-				E3513C691DBB1ED300534775 /* JavaScriptTableViewCell.swift in Sources */,
-				E3513C6F1DBB1EE700534775 /* RubyTableViewCell.swift in Sources */,
 				6B9F8B0A1B02B8E5001483E7 /* GithubRepoSearchSettings.swift in Sources */,
 				6B2DDEEE1B02911A00D25281 /* AppDelegate.swift in Sources */,
-				E3513C711DBB1EEF00534775 /* SwiftTableViewCell.swift in Sources */,
 				6B2DDF0E1B02970A00D25281 /* GithubRepo.swift in Sources */,
-				E3513C6D1DBB1EE100534775 /* PythonTableViewCell.swift in Sources */,
 				E383CE701DBAF3AB00139706 /* GithubRepoSettingsTableViewController.swift in Sources */,
 				E3C6D0EF1DB976240002A98E /* RepoResultsTableViewCell.swift in Sources */,
 				E3513C651DBB1D1B00534775 /* LanguageFilter.swift in Sources */,
-				E3513C671DBB1ECA00534775 /* JavaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,27 @@
 
 import UIKit
 
-struct LanguageFilter {
-    var java: Bool?
-    var javaScript: Bool?
-    var objectiveC: Bool?
-    var python: Bool?
-    var ruby: Bool?
-    var swift: Bool?
+class LanguageFilter: NSObject {
+    
+    static var keys: [String] = ["Java", "JavaScript", "Objective-C", "Python", "Ruby", "Swift"]
+    var languageMap: [String:Bool]?
+    
+    override init() {
+        languageMap = ["Java": true,
+                        "JavaScript": true,
+                        "Objective-C": true,
+                        "Python": true,
+                        "Ruby": true,
+                        "Swift": true]
+        super.init()
+    }
+    
+    func isChecked(language: String) -> Bool {
+        if let checked = languageMap![language] {
+            return checked
+        }
+        return false
+    }
+    
+    
 }

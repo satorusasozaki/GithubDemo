@@ -19,22 +19,13 @@ class GithubRepoSettingsTableViewController: UITableViewController {
         sliderValue.text = String(Int(sender.value))
     }
     
-    @IBOutlet weak var javaCell: UITableViewCell!
-    @IBOutlet weak var javaScriptCell: UITableViewCell!
-    @IBOutlet weak var objectiveCCell: UITableViewCell!
-    @IBOutlet weak var pythonCell: UITableViewCell!
-    @IBOutlet weak var rubyCell: UITableViewCell!
-    @IBOutlet weak var swiftCell: UITableViewCell!
-    
-    
-    
     var languageFilter: LanguageFilter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sliderValue.text = String(Int(minimumStarsSlider.value))
-        // Do any additional setup after loading the view.
-        //languageFilter = LanguageFilter()
+        languageFilter = LanguageFilter()
+        tableView.isScrollEnabled = false
     }
     
     @IBAction func onSave(_ sender: AnyObject) {
@@ -42,42 +33,13 @@ class GithubRepoSettingsTableViewController: UITableViewController {
             let indexPath = IndexPath(row: i, section: 1)
             let cell = tableView.cellForRow(at: indexPath)
             if cell?.accessoryType == .checkmark {
-                switch i {
-                case 0:
-                    languageFilter?.java = true
-                case 1:
-                    languageFilter?.javaScript = true
-                case 2:
-                    languageFilter?.objectiveC = true
-                case 3:
-                    languageFilter?.python = true
-                case 4:
-                    languageFilter?.ruby = true
-                case 5:
-                    languageFilter?.swift = true
-                default:
-                    break
-                }
+                languageFilter?.languageMap?[LanguageFilter.keys[i]] = true
             } else {
-                switch i {
-                case 0:
-                    languageFilter?.java = true
-                case 1:
-                    languageFilter?.javaScript = true
-                case 2:
-                    languageFilter?.objectiveC = true
-                case 3:
-                    languageFilter?.python = true
-                case 4:
-                    languageFilter?.ruby = true
-                case 5:
-                    languageFilter?.swift = true
-                default:
-                    break
-                }
+                languageFilter?.languageMap?[LanguageFilter.keys[i]] = false
             }
-
-            
+        }
+        for (key, value) in (languageFilter?.languageMap)! {
+            print("Key: \(key)\tValue: \(value)")
         }
         
         doneHandler?(Int(minimumStarsSlider.value), languageFilter)
@@ -93,21 +55,6 @@ class GithubRepoSettingsTableViewController: UITableViewController {
         print("indexPath.row: \(indexPath.row)")
         print("indexPath.section: \(indexPath.section)")
         if newCell?.accessoryType == .none {
-            print(filteredLanguages)
-            newCell?.accessoryType = .checkmark
-            if newCell == javaCell {
-                filteredLanguages?.append("Java")
-            } else if newCell == javaScriptCell {
-                filteredLanguages?.append("JavaScript")
-            } else if newCell == objectiveCCell {
-                filteredLanguages?.append("Objective-C")
-            } else if newCell == pythonCell {
-                filteredLanguages?.append("Python")
-            } else if newCell == rubyCell {
-                filteredLanguages?.append("Ruby")
-            } else if newCell == swiftCell {
-                filteredLanguages?.append("Swift")
-            }
 
         } else {
             newCell?.accessoryType = .none
