@@ -199,35 +199,84 @@
             </objects>
             <point key="canvasLocation" x="818.39999999999998" y="-558.17091454272872"/>
         </scene>
-        <!--Github Repo Settings View Controller-->
-        <scene sceneID="hMp-4c-yhM">
+        <!--Github Repo Settings Table View Controller-->
+        <scene sceneID="5LO-fz-DNH">
             <objects>
-                <viewController storyboardIdentifier="GithubRepoSettingsViewController" id="SVn-c4-Eti" customClass="GithubRepoSettingsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2nJ-x4-heP"/>
-                        <viewControllerLayoutGuide type="bottom" id="lOA-xq-Gtw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="GithubRepoSettingsViewController" id="Fiw-eo-0CT">
+                <tableViewController id="oeq-v8-Y0N" customClass="GithubRepoSettingsTableViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Hg9-Gd-IE4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="BmH-4v-k1m">
-                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="ALP-Zf-ERD">
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Star Filter" id="pgc-dZ-7db">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0vK-7X-wdQ">
+                                        <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0vK-7X-wdQ" id="UhP-qs-Off">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gmw-1E-ecF" userLabel="Minimum Stars">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q39-6H-uNW" userLabel="0">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="72" id="03d-ZB-c6J"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50000" minValue="30000" maxValue="100000" translatesAutoresizingMaskIntoConstraints="NO" id="ITU-kj-u7X">
+                                                    <connections>
+                                                        <action selector="minimumStarsSliderValueChanged:" destination="oeq-v8-Y0N" eventType="valueChanged" id="UrM-jW-V4t"/>
+                                                    </connections>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="q39-6H-uNW" firstAttribute="leading" secondItem="ITU-kj-u7X" secondAttribute="trailing" priority="900" constant="16" id="1kb-wW-SaY"/>
+                                                <constraint firstItem="ITU-kj-u7X" firstAttribute="leading" secondItem="Gmw-1E-ecF" secondAttribute="trailing" constant="24" id="35F-oR-0AC"/>
+                                                <constraint firstItem="Gmw-1E-ecF" firstAttribute="top" secondItem="UhP-qs-Off" secondAttribute="topMargin" constant="3" id="8v9-yB-gnE"/>
+                                                <constraint firstItem="q39-6H-uNW" firstAttribute="top" secondItem="UhP-qs-Off" secondAttribute="topMargin" constant="3" id="BVc-mI-Abx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="q39-6H-uNW" secondAttribute="trailing" constant="16" id="Tgr-wU-y58"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Gmw-1E-ecF" secondAttribute="bottom" constant="3" id="hHO-bO-c1A"/>
+                                                <constraint firstItem="ITU-kj-u7X" firstAttribute="centerY" secondItem="UhP-qs-Off" secondAttribute="centerY" id="p1U-UR-Bxa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="q39-6H-uNW" secondAttribute="bottom" constant="3" id="pra-Gt-5dz"/>
+                                                <constraint firstItem="Gmw-1E-ecF" firstAttribute="leading" secondItem="UhP-qs-Off" secondAttribute="leadingMargin" constant="16" id="vDM-GP-hEz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="oeq-v8-Y0N" id="6b5-Cw-x9R"/>
+                            <outlet property="delegate" destination="oeq-v8-Y0N" id="OXW-zh-tRF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="btM-AR-N0J">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="EAv-hc-hNA">
                             <connections>
-                                <action selector="onSave:" destination="SVn-c4-Eti" id="dPK-bw-asw"/>
+                                <action selector="onSave:" destination="oeq-v8-Y0N" id="0n9-QG-Uph"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="KOA-DM-ndq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="p5M-L2-lFj">
                             <connections>
-                                <action selector="onCancel:" destination="SVn-c4-Eti" id="afS-vb-aZ1"/>
+                                <action selector="onCancel:" destination="oeq-v8-Y0N" id="yKw-Av-C32"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-3H-GpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="minimumStarsSlider" destination="ITU-kj-u7X" id="T9d-Ee-iZQ"/>
+                        <outlet property="sliderValue" destination="q39-6H-uNW" id="c7V-jI-LHD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCx-gY-yQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2437.5999999999999" y="-556.37181409295351"/>
+            <point key="canvasLocation" x="2381.5999999999999" y="-554.57271364317842"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FpP-oR-azb">
@@ -248,22 +297,22 @@
             <point key="canvasLocation" x="132" y="-557"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="BDi-i7-LmK">
+        <scene sceneID="bOP-bT-ZwG">
             <objects>
-                <navigationController storyboardIdentifier="GithubRepoSettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="zux-jI-33K" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GithubRepoSettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="9dU-AF-Rqg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w0b-75-R3W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KPg-FK-96a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="SVn-c4-Eti" kind="relationship" relationship="rootViewController" id="qDw-tN-Q5o"/>
+                        <segue destination="oeq-v8-Y0N" kind="relationship" relationship="rootViewController" id="zie-Uf-OTG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ozn-go-4em" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XgS-aM-D1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1743" y="-558"/>
+            <point key="canvasLocation" x="1605.5999999999999" y="-553.67316341829087"/>
         </scene>
     </scenes>
     <resources>

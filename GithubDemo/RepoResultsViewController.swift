@@ -18,6 +18,9 @@ class RepoResultsViewController: UIViewController {
     var searchSettings = GithubRepoSearchSettings()
 
     var repos: [GithubRepo]!
+    
+    var minimumStars: Int?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,13 +69,22 @@ class RepoResultsViewController: UIViewController {
     // http://stackoverflow.com/questions/25444213/presenting-viewcontroller-with-navigationviewcontroller-swift
     // Present view controller modally with navigation bar
     @IBAction func onSettings(_ sender: UIBarButtonItem) {
-        let settingsVC = storyboard?.instantiateViewController(withIdentifier: "GithubRepoSettingsNavigationController")
-        //let navVC = UINavigationController(rootViewController: settingsVC!)
-        //navigationController?.present(navVC, animated: true, completion: {})
-        //settingsVC?.navigationController?.navigationBar.isHidden = false
-         self.present(settingsVC!, animated: true, completion: {})
+        let settingsNVC = storyboard?.instantiateViewController(withIdentifier: "GithubRepoSettingsNavigationController") as! UINavigationController
+         self.present(settingsNVC, animated: true, completion: {})
+        let settingsVC = settingsNVC.viewControllers[0] as! GithubRepoSettingsTableViewController
+        settingsVC.doneHandler = {(minimum: Int?) -> Void in
+            self.minimumStars = minimum
+            print(minimum!)
+            var newRepos = [GithubRepo]()
+            for repo in self.repos! {
+                if repo.stars! > minimum! {
+                    newRepos.append(repo)
+                }
+            }
+            self.repos = newRepos
+            self.tableView.reloadData()
+        }
     }
-    
 }
 
 extension RepoResultsViewController: UITableViewDataSource, UITableViewDelegate {
