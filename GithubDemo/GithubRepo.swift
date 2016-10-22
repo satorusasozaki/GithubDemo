@@ -49,7 +49,7 @@ class GithubRepo: CustomStringConvertible {
         if let description = jsonResult["description"] as? String {
             repoDescription = description
         }
-        if let lang = jsonResult[language] as? String {
+        if let lang = jsonResult["language"] as? String {
             language = lang
         }
     }
@@ -62,7 +62,6 @@ class GithubRepo: CustomStringConvertible {
 
         manager.get(reposUrl, parameters: params, success: { (operation: AFHTTPRequestOperation, responseObject: Any) in
             if let response = responseObject as? NSDictionary, let results = response["items"] as? NSArray {
-                print(response)
                 var repos: [GithubRepo] = []
                 for result in results as! [NSDictionary] {
                     repos.append(GithubRepo(jsonResult: result))
@@ -103,12 +102,15 @@ class GithubRepo: CustomStringConvertible {
 
     // Creates a text representation of a GitHub repo
     var description: String {
-        return "[Name: \(self.name!)]" +
-            "\n\t[Stars: \(self.stars!)]" +
-            "\n\t[Forks: \(self.forks!)]" +
-            "\n\t[Owner: \(self.ownerHandle!)]" +
-            "\n\t[Avatar: \(self.ownerAvatarURL!)]" +
-            "\n\t[Description: \(repoDescription!)]" +
-            "\n\t[Language: \(language!)]"
+        var desc = "[Name: \(self.name!)]" +
+        "\n\t[Stars: \(self.stars!)]" +
+        "\n\t[Forks: \(self.forks!)]" +
+        "\n\t[Owner: \(self.ownerHandle!)]" +
+        "\n\t[Avatar: \(self.ownerAvatarURL!)]" +
+        "\n\t[Description: \(repoDescription!)]"
+        if let language = language {
+            desc += "\n\t[Language: \(language)]\n"
+        }
+        return desc
     }
 }
