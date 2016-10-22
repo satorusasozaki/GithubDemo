@@ -412,8 +412,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="javaCell" destination="uNt-Gl-unR" id="zmF-kS-W1q"/>
+                        <outlet property="javaScriptCell" destination="Khg-eO-F03" id="SDJ-bu-IOx"/>
                         <outlet property="minimumStarsSlider" destination="ITU-kj-u7X" id="T9d-Ee-iZQ"/>
+                        <outlet property="objectiveCCell" destination="YAb-4V-0Ah" id="7d2-dJ-xwG"/>
+                        <outlet property="pythonCell" destination="5CA-EB-Y4T" id="pme-BX-qaa"/>
+                        <outlet property="rubyCell" destination="Njs-Q4-rUH" id="MuC-eO-HRu"/>
                         <outlet property="sliderValue" destination="q39-6H-uNW" id="c7V-jI-LHD"/>
+                        <outlet property="swiftCell" destination="aGX-uL-9Gk" id="Md8-C5-iXe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCx-gY-yQP" userLabel="First Responder" sceneMemberID="firstResponder"/>

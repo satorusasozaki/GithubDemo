@@ -52,7 +52,6 @@ class RepoResultsViewController: UIViewController {
 
         // Perform request to GitHub API to get the list of repositories
         GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
-
             // Print the returned repositories to the output window
             for repo in newRepos {
                 print(repo)
