@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JHG-hZ-9rP" id="frO-LP-hOT">
-                                            <frame key="frameInset" width="375" height="223"/>
+                                            <frame key="frameInset" width="375" height="223.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMz-Ox-ztJ" userLabel="Title View">
@@ -50,8 +50,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" red="0.12941176469999999" green="0.59999999999999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
+                                                                <constraint firstItem="35G-li-Zfo" firstAttribute="centerY" secondItem="0bg-PR-4iL" secondAttribute="centerY" constant="-1" id="8W7-zr-TyI"/>
                                                                 <constraint firstItem="35G-li-Zfo" firstAttribute="leading" secondItem="0bg-PR-4iL" secondAttribute="trailing" constant="10" id="DBX-ZJ-pd5"/>
                                                                 <constraint firstAttribute="bottom" secondItem="35G-li-Zfo" secondAttribute="bottom" constant="3" id="MAQ-SC-Hes"/>
                                                                 <constraint firstItem="0bg-PR-4iL" firstAttribute="leading" secondItem="htJ-EJ-7Dd" secondAttribute="leading" constant="4" id="Or5-Zb-nbG"/>
@@ -74,7 +75,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" red="0.12941176469999999" green="0.59999999999999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="Bjp-Ie-c8h" firstAttribute="leading" secondItem="C3z-la-pN2" secondAttribute="trailing" constant="8" id="0f7-wK-P8E"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Bjp-Ie-c8h" secondAttribute="trailing" id="XdZ-Aa-tmt"/>
@@ -94,7 +95,7 @@
                                                         <constraint firstItem="RVZ-lH-ovZ" firstAttribute="top" secondItem="HMz-Ox-ztJ" secondAttribute="top" constant="8" id="pdc-J0-3Ya"/>
                                                         <constraint firstItem="vJm-bi-4Ag" firstAttribute="leading" secondItem="htJ-EJ-7Dd" secondAttribute="trailing" constant="8" id="tiq-oQ-Yen"/>
                                                         <constraint firstItem="htJ-EJ-7Dd" firstAttribute="centerY" secondItem="HMz-Ox-ztJ" secondAttribute="centerY" id="tm7-Qm-zxM"/>
-                                                        <constraint firstItem="htJ-EJ-7Dd" firstAttribute="centerX" secondItem="HMz-Ox-ztJ" secondAttribute="centerX" constant="25" id="xjz-Vz-MM7"/>
+                                                        <constraint firstItem="htJ-EJ-7Dd" firstAttribute="centerX" secondItem="HMz-Ox-ztJ" secondAttribute="centerX" constant="40" id="xjz-Vz-MM7"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh7-jL-oge" userLabel="Name View">
@@ -183,7 +184,13 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IQK-2Z-nIR" secondAttribute="bottom" id="lUy-iH-bTu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="x5q-EH-pP8"/>
+                    <navigationItem key="navigationItem" id="x5q-EH-pP8">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="BW6-Ig-Dnf">
+                            <connections>
+                                <action selector="onSettings:" destination="vXZ-lx-hvc" id="hul-mc-Ofc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="IQK-2Z-nIR" id="1f7-vk-qEc"/>
                     </connections>
@@ -191,6 +198,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="818.39999999999998" y="-558.17091454272872"/>
+        </scene>
+        <!--Github Repo Settings View Controller-->
+        <scene sceneID="hMp-4c-yhM">
+            <objects>
+                <viewController storyboardIdentifier="GithubRepoSettingsViewController" id="SVn-c4-Eti" customClass="GithubRepoSettingsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2nJ-x4-heP"/>
+                        <viewControllerLayoutGuide type="bottom" id="lOA-xq-Gtw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="GithubRepoSettingsViewController" id="Fiw-eo-0CT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BmH-4v-k1m">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="ALP-Zf-ERD">
+                            <connections>
+                                <action selector="onSave:" destination="SVn-c4-Eti" id="dPK-bw-asw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="KOA-DM-ndq">
+                            <connections>
+                                <action selector="onCancel:" destination="SVn-c4-Eti" id="afS-vb-aZ1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-3H-GpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2437.5999999999999" y="-556.37181409295351"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FpP-oR-azb">
@@ -209,6 +246,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dru-y2-L7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="-557"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BDi-i7-LmK">
+            <objects>
+                <navigationController storyboardIdentifier="GithubRepoSettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="zux-jI-33K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w0b-75-R3W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SVn-c4-Eti" kind="relationship" relationship="rootViewController" id="qDw-tN-Q5o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ozn-go-4em" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743" y="-558"/>
         </scene>
     </scenes>
     <resources>

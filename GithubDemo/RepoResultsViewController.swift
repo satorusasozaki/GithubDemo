@@ -63,6 +63,16 @@ class RepoResultsViewController: UIViewController {
                 print(error)
         })
     }
+    // http://stackoverflow.com/questions/25444213/presenting-viewcontroller-with-navigationviewcontroller-swift
+    // Present view controller modally with navigation bar
+    @IBAction func onSettings(_ sender: UIBarButtonItem) {
+        let settingsVC = storyboard?.instantiateViewController(withIdentifier: "GithubRepoSettingsNavigationController")
+        //let navVC = UINavigationController(rootViewController: settingsVC!)
+        //navigationController?.present(navVC, animated: true, completion: {})
+        //settingsVC?.navigationController?.navigationBar.isHidden = false
+         self.present(settingsVC!, animated: true, completion: {})
+    }
+    
 }
 
 extension RepoResultsViewController: UITableViewDataSource, UITableViewDelegate {
