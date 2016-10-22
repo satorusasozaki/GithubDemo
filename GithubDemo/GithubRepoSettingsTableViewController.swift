@@ -24,8 +24,18 @@ class GithubRepoSettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sliderValue.text = String(Int(minimumStarsSlider.value))
-        languageFilter = LanguageFilter()
+        //languageFilter = LanguageFilter()
         tableView.isScrollEnabled = false
+        for i in 0..<6 {
+            let indexPath = IndexPath(row: i, section: 1)
+            let cell = tableView.cellForRow(at: indexPath)
+            if (languageFilter?.languageMap?[LanguageFilter.keys[i]])! {
+                cell?.accessoryType = .checkmark
+            } else {
+                cell?.accessoryType = .none
+            }
+        }
+        tableView.reloadData()
     }
     
     @IBAction func onSave(_ sender: AnyObject) {
@@ -38,9 +48,9 @@ class GithubRepoSettingsTableViewController: UITableViewController {
                 languageFilter?.languageMap?[LanguageFilter.keys[i]] = false
             }
         }
-        for (key, value) in (languageFilter?.languageMap)! {
-            print("Key: \(key)\tValue: \(value)")
-        }
+//        for (key, value) in (languageFilter?.languageMap)! {
+//            print("Key: \(key)\tValue: \(value)")
+//        }
         
         doneHandler?(Int(minimumStarsSlider.value), languageFilter)
         self.dismiss(animated: true, completion: {})
@@ -48,18 +58,26 @@ class GithubRepoSettingsTableViewController: UITableViewController {
     @IBAction func onCancel(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: {})
     }
+    @IBOutlet weak var swiftCell: UITableViewCell!
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newCell = tableView.cellForRow(at: indexPath)
-        print("indexPath: \(indexPath)")
-        print("indexPath.row: \(indexPath.row)")
-        print("indexPath.section: \(indexPath.section)")
-        if newCell?.accessoryType == .none {
-
+        if tableView.cellForRow(at: indexPath) == swiftCell {
+            if swiftCell.accessoryType == .checkmark {
+               swiftCell.accessoryType = .none
+            } else {
+                swiftCell.accessoryType = .checkmark
+            }
         } else {
-            newCell?.accessoryType = .none
+            let newCell = tableView.cellForRow(at: indexPath)
+            if newCell?.accessoryType == .none {
+                languageFilter?.languageMap?[LanguageFilter.keys[indexPath.row]] = true
+                newCell?.accessoryType = .checkmark
+            } else {
+                languageFilter?.languageMap?[LanguageFilter.keys[indexPath.row]] = false
+                newCell?.accessoryType = .none
+            }
         }
-        
+        tableView.reloadData()
         
     }
     

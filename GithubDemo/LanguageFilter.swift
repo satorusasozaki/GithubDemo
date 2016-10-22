@@ -20,6 +20,12 @@ class LanguageFilter: NSObject {
                         "Python": true,
                         "Ruby": true,
                         "Swift": true]
+        print("\n\n\n\n In init")
+        for (key, value) in languageMap! {
+            print("Key: \(key)\tValue: \(value)")
+        }
+        print("end init\n\n\n\n")
+        
         super.init()
     }
     

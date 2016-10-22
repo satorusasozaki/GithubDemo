@@ -44,6 +44,8 @@ class RepoResultsViewController: UIViewController {
 
         // Perform the first search when the view controller first loads
         doSearch()
+        
+        languageFilter = LanguageFilter()
     }
 
     // Perform the search.
@@ -55,11 +57,9 @@ class RepoResultsViewController: UIViewController {
         GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
             // Print the returned repositories to the output window
             for repo in newRepos {
-                print(repo)
+                //print(repo)
             }
-            print("\n\n\n\n\n\n")
             self.repos = newRepos
-            print(self.repos)
             self.tableView.reloadData()
             MBProgressHUD.hide(for: self.view, animated: true)
             }, error: { (error) -> Void in
@@ -70,12 +70,17 @@ class RepoResultsViewController: UIViewController {
     // Present view controller modally with navigation bar
     @IBAction func onSettings(_ sender: UIBarButtonItem) {
         let settingsNVC = storyboard?.instantiateViewController(withIdentifier: "GithubRepoSettingsNavigationController") as! UINavigationController
-         self.present(settingsNVC, animated: true, completion: {})
         let settingsVC = settingsNVC.viewControllers[0] as! GithubRepoSettingsTableViewController
+        settingsVC.languageFilter = languageFilter
+        print("\n\n\n\nonSetting")
+        for (key, value) in (languageFilter?.languageMap)! {
+            print("Key: \(key)\tValue: \(value)")
+        }
+        print("end onSetting\n\n\n\n")
+
         settingsVC.doneHandler = {(minimum: Int?, langFilter: LanguageFilter?) -> Void in
             self.minimumStars = minimum
             self.languageFilter = langFilter
-            print(minimum!)
             var newRepos = [GithubRepo]()
             for repo in self.repos!{
                 if repo.stars! > minimum! {
@@ -89,6 +94,9 @@ class RepoResultsViewController: UIViewController {
             self.repos = newRepos
             self.tableView.reloadData()
         }
+        self.present(settingsNVC, animated: true, completion: {})
+
+
     }
 }
 
