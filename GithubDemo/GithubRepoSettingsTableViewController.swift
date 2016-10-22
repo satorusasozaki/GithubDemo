@@ -10,7 +10,7 @@ import UIKit
 
 class GithubRepoSettingsTableViewController: UITableViewController {
 
-    var doneHandler: ((Int?) -> Void)?
+    var doneHandler: (((Int?), (LanguageFilter?)) -> Void)?
     
     @IBOutlet weak var minimumStarsSlider: UISlider!
     @IBOutlet weak var sliderValue: UILabel!
@@ -28,20 +28,59 @@ class GithubRepoSettingsTableViewController: UITableViewController {
     
     
     
-    var filteredLanguages: [String]?
+    var languageFilter: LanguageFilter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sliderValue.text = String(Int(minimumStarsSlider.value))
         // Do any additional setup after loading the view.
-        filteredLanguages = [String]()
+        //languageFilter = LanguageFilter()
     }
     
     @IBAction func onSave(_ sender: AnyObject) {
-        let indexPath = IndexPath(row: 0, section: 1)
-        let cell = tableView.cellForRow(at: indexPath)
-        print("cell: \(cell)")
-        doneHandler?(Int(minimumStarsSlider.value))
+        for i in 0..<6 {
+            let indexPath = IndexPath(row: i, section: 1)
+            let cell = tableView.cellForRow(at: indexPath)
+            if cell?.accessoryType == .checkmark {
+                switch i {
+                case 0:
+                    languageFilter?.java = true
+                case 1:
+                    languageFilter?.javaScript = true
+                case 2:
+                    languageFilter?.objectiveC = true
+                case 3:
+                    languageFilter?.python = true
+                case 4:
+                    languageFilter?.ruby = true
+                case 5:
+                    languageFilter?.swift = true
+                default:
+                    break
+                }
+            } else {
+                switch i {
+                case 0:
+                    languageFilter?.java = true
+                case 1:
+                    languageFilter?.javaScript = true
+                case 2:
+                    languageFilter?.objectiveC = true
+                case 3:
+                    languageFilter?.python = true
+                case 4:
+                    languageFilter?.ruby = true
+                case 5:
+                    languageFilter?.swift = true
+                default:
+                    break
+                }
+            }
+
+            
+        }
+        
+        doneHandler?(Int(minimumStarsSlider.value), languageFilter)
         self.dismiss(animated: true, completion: {})
     }
     @IBAction func onCancel(_ sender: AnyObject) {

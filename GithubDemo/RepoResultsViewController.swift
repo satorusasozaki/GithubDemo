@@ -20,6 +20,7 @@ class RepoResultsViewController: UIViewController {
     var repos: [GithubRepo]!
     
     var minimumStars: Int?
+    var languageFilter: LanguageFilter?
     
 
     override func viewDidLoad() {
@@ -71,8 +72,9 @@ class RepoResultsViewController: UIViewController {
         let settingsNVC = storyboard?.instantiateViewController(withIdentifier: "GithubRepoSettingsNavigationController") as! UINavigationController
          self.present(settingsNVC, animated: true, completion: {})
         let settingsVC = settingsNVC.viewControllers[0] as! GithubRepoSettingsTableViewController
-        settingsVC.doneHandler = {(minimum: Int?) -> Void in
+        settingsVC.doneHandler = {(minimum: Int?, langFilter: LanguageFilter?) -> Void in
             self.minimumStars = minimum
+            self.languageFilter = langFilter
             print(minimum!)
             var newRepos = [GithubRepo]()
             for repo in self.repos! {
