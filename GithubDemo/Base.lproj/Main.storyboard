@@ -50,7 +50,6 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.12941176469999999" green="0.59999999999999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="35G-li-Zfo" firstAttribute="centerY" secondItem="0bg-PR-4iL" secondAttribute="centerY" constant="-1" id="8W7-zr-TyI"/>
                                                                 <constraint firstItem="35G-li-Zfo" firstAttribute="leading" secondItem="0bg-PR-4iL" secondAttribute="trailing" constant="10" id="DBX-ZJ-pd5"/>
@@ -75,7 +74,6 @@
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.12941176469999999" green="0.59999999999999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="Bjp-Ie-c8h" firstAttribute="leading" secondItem="C3z-la-pN2" secondAttribute="trailing" constant="8" id="0f7-wK-P8E"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Bjp-Ie-c8h" secondAttribute="trailing" id="XdZ-Aa-tmt"/>
@@ -86,7 +84,6 @@
                                                             </constraints>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.12941176469999999" green="0.59999999999999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="RVZ-lH-ovZ" firstAttribute="leading" secondItem="HMz-Ox-ztJ" secondAttribute="leading" constant="8" id="9AZ-pc-Uz6"/>
                                                         <constraint firstItem="vJm-bi-4Ag" firstAttribute="centerY" secondItem="HMz-Ox-ztJ" secondAttribute="centerY" id="KE9-X8-CrS"/>
@@ -111,7 +108,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="5it-30-SZx" firstAttribute="top" secondItem="uh7-jL-oge" secondAttribute="top" constant="8" id="0aP-Rl-VmS"/>
                                                         <constraint firstItem="5it-30-SZx" firstAttribute="leading" secondItem="uh7-jL-oge" secondAttribute="leading" constant="8" id="8MN-w5-4dK"/>
@@ -137,7 +133,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="FTi-dw-xPQ" firstAttribute="leading" secondItem="f3l-GE-sLl" secondAttribute="trailing" constant="8" id="B0T-dp-GYw"/>
                                                         <constraint firstItem="f3l-GE-sLl" firstAttribute="top" secondItem="5zO-Kb-39u" secondAttribute="top" constant="8" id="EyV-ra-G16"/>
@@ -150,7 +145,6 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.86666666670000003" green="0.22352941179999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="HMz-Ox-ztJ" firstAttribute="trailing" secondItem="frO-LP-hOT" secondAttribute="trailingMargin" id="3kw-D4-AZO"/>
                                                 <constraint firstItem="uh7-jL-oge" firstAttribute="leading" secondItem="frO-LP-hOT" secondAttribute="leadingMargin" id="97n-Ju-n2Q"/>
@@ -253,11 +247,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Star Filter" id="wVf-UW-o5H">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uNt-Gl-unR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uNt-Gl-unR">
                                         <rect key="frame" x="0.0" y="219.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uNt-Gl-unR" id="c6f-oy-ayL">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="336" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Java" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-zj-sJn" userLabel="Java">
