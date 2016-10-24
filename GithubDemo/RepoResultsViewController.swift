@@ -95,8 +95,6 @@ class RepoResultsViewController: UIViewController {
             self.tableView.reloadData()
         }
         self.present(settingsNVC, animated: true, completion: {})
-
-
     }
 }
 
@@ -113,18 +111,13 @@ extension RepoResultsViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoResultsTableViewCell", for: indexPath) as! RepoResultsTableViewCell
-        //let cell = RepoResultsTableViewCell()
-        //cell.textLabel?.text = repos[indexPath.row].repoDescription
         let repo = repos[indexPath.row]
         cell.titleLabel.text = repo.name
-        //cell.starLabel.text = "Star: \(String(repo.stars!))"
         cell.starLabel.text = String(repo.stars!)
-        //cell.forkLabel.text = "Fork: \(String(repo.forks!))"
         cell.forkLabel.text = String(repo.forks!)
         cell.usernameLabel.text = repo.ownerHandle
         cell.profileImageView.setImageWith(URL(string: repo.ownerAvatarURL!)!)
         cell.descriptionLabel.text = repo.repoDescription
-        
         return cell
     }
 }
