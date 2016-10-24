@@ -1,2 +1,2 @@
 # GithubDemo
-![githubDemo](githubDemo.git)
+![githubDemo](https://github.com/satorusasozaki/GithubDemo/blob/master/githubDemo.gif)
