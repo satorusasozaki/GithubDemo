@@ -20,8 +20,8 @@ class RepoResultsViewController: UIViewController {
     var repos: [GithubRepo]!
     
     var minimumStars: Int?
-    var languageFilter: LanguageFilter?
-    
+//    var languageFilter: LanguageFilter?
+    var ud: UserDefaults?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,15 @@ class RepoResultsViewController: UIViewController {
         // Perform the first search when the view controller first loads
         doSearch()
         
-        languageFilter = LanguageFilter()
+        //languageFilter = LanguageFilter()
+        ud = UserDefaults.standard
+        ud?.set(true, forKey: "Java")
+        ud?.set(true, forKey: "JavaScript")
+        ud?.set(true, forKey: "Objective-C")
+        ud?.set(true, forKey: "Python")
+        ud?.set(true, forKey: "Ruby")
+        ud?.set(true, forKey: "Swift")
+        ud?.set(10000, forKey: "stars")
     }
 
     // Perform the search.
@@ -71,22 +79,19 @@ class RepoResultsViewController: UIViewController {
     @IBAction func onSettings(_ sender: UIBarButtonItem) {
         let settingsNVC = storyboard?.instantiateViewController(withIdentifier: "GithubRepoSettingsNavigationController") as! UINavigationController
         let settingsVC = settingsNVC.viewControllers[0] as! GithubRepoSettingsTableViewController
-        settingsVC.languageFilter = languageFilter
-        print("\n\n\n\nonSetting")
-        for (key, value) in (languageFilter?.languageMap)! {
-            print("Key: \(key)\tValue: \(value)")
-        }
-        print("end onSetting\n\n\n\n")
 
+        
         settingsVC.doneHandler = {(minimum: Int?, langFilter: LanguageFilter?) -> Void in
             self.minimumStars = minimum
-            self.languageFilter = langFilter
             var newRepos = [GithubRepo]()
             for repo in self.repos!{
                 if repo.stars! > minimum! {
                     if let language = repo.language {
-                        if self.languageFilter!.isChecked(language: language) {
-                            newRepos.append(repo)
+                        if let isChecked = self.ud?.object(forKey: language) as? Bool {
+                            if isChecked {
+                                newRepos.append(repo)
+                            }
+                            
                         }
                     } 
                 }
